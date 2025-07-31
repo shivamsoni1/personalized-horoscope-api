@@ -2,7 +2,7 @@
 
 A comprehensive Node.js backend service that generates and serves personalized daily horoscopes for users based on their zodiac signs. Built with Express.js, MongoDB, and modern security practices.
 
-**⚠️ AI Tool Usage Notice**: This project was developed with assistance from Claude AI (Anthropic) for architecture planning, code implementation, best practices guidance, and documentation. The AI helped with design patterns, error handling, testing strategies, and optimization recommendations.
+**⚠️ AI Tool Usage Notice**: This project was developed with assistance from Claude AI (Anthropic).
 
 ## 🚀 Features
 
