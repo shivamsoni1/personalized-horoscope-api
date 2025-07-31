@@ -52,16 +52,16 @@ A comprehensive Node.js backend service that generates and serves personalized d
 3. **Start the Complete Stack**
    ```bash
    # Start MongoDB + API with one command
-   docker-compose -f docker-compose.local.yml up -d
+   docker-compose -f docker-compose.yml up -d
    
    # View startup logs
-   docker-compose -f docker-compose.local.yml logs -f
+   docker-compose -f docker-compose.yml logs -f
    ```
 
 4. **Verify Services are Running**
    ```bash
    # Check container status
-   docker-compose -f docker-compose.local.yml ps
+   docker-compose -f docker-compose.yml ps
    
    # Test API health
    curl http://localhost:3000/health
@@ -179,28 +179,28 @@ personalized-horoscope-api/
 │   └── errorHandler.js      # Global error handling
 ├── services/
 │   └── horoscopeService.js  # Core horoscope generation logic
-├── docker-compose.local.yml # Local development setup
-├── Dockerfile.local         # Development container
+├── docker-compose.yml       # Local development setup
+├── Dockerfile               # Development container
 ├── server.js                # Application entry point
-└── README.md               # Project documentation
+└── README.md                # Project documentation
 ```
 
 ## Docker Management Commands
 
 ```bash
 # View container logs
-docker-compose -f docker-compose.local.yml logs api
-docker-compose -f docker-compose.local.yml logs mongodb
+docker-compose -f docker-compose.yml logs api
+docker-compose -f docker-compose.yml logs mongodb
 
 # Restart services
-docker-compose -f docker-compose.local.yml restart
+docker-compose -f docker-compose.yml restart
 
 # Stop services
-docker-compose -f docker-compose.local.yml down
+docker-compose -f docker-compose.yml down
 
 # Clean restart (removes all data)
-docker-compose -f docker-compose.local.yml down -v
-docker-compose -f docker-compose.local.yml up -d
+docker-compose -f docker-compose.yml down -v
+docker-compose -f docker-compose.yml up -d
 
 # Monitor resource usage
 docker stats
@@ -214,26 +214,26 @@ docker stats
 lsof -i :3000
 
 # Clean restart
-docker-compose -f docker-compose.local.yml down -v
-docker-compose -f docker-compose.local.yml up -d
+docker-compose -f docker-compose.yml down -v
+docker-compose -f docker-compose.yml up -d
 ```
 
 **MongoDB connection issues:**
 ```bash
 # Check MongoDB logs
-docker-compose -f docker-compose.local.yml logs mongodb
+docker-compose -f docker-compose.yml logs mongodb
 
 # Test MongoDB connection
-docker-compose -f docker-compose.local.yml exec mongodb mongosh -u root -p password123 --authenticationDatabase admin --eval "db.adminCommand('ping')"
+docker-compose -f docker-compose.yml exec mongodb mongosh -u root -p password123 --authenticationDatabase admin --eval "db.adminCommand('ping')"
 ```
 
 **API not responding:**
 ```bash
 # Check API logs
-docker-compose -f docker-compose.local.yml logs api
+docker-compose -f docker-compose.yml logs api
 
 # Rebuild and restart
-docker-compose -f docker-compose.local.yml up --build -d
+docker-compose -f docker-compose.yml up --build -d
 ```
 
 ## 🎯 Design Decisions
